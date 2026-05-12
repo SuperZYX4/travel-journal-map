@@ -1,0 +1,355 @@
+/* 中国地图组件样式 - 手帐风格 */
+
+.china-map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: linear-gradient(135deg, #FDF8F3 0%, #FFF9F5 100%);
+  border-radius: 16px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* 角落装饰 */
+.map-corner {
+  position: absolute;
+  font-size: 28px;
+  color: #D4A574;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.map-corner.top-left {
+  top: 8px;
+  left: 8px;
+}
+
+.map-corner.top-right {
+  top: 8px;
+  right: 8px;
+  transform: scaleX(-1);
+}
+
+.map-corner.bottom-left {
+  bottom: 8px;
+  left: 8px;
+  transform: scaleY(-1);
+}
+
+.map-corner.bottom-right {
+  bottom: 8px;
+  right: 8px;
+  transform: scale(-1);
+}
+
+/* 地图区域 */
+.map-area {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dashed #E8C9A0;
+  border-radius: 12px;
+  overflow: visible;
+}
+
+/* 背景装饰文字 */
+.map-bg-decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.map-bg-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #8B7355;
+  letter-spacing: 4px;
+}
+
+.map-bg-text-sub {
+  font-size: 24px;
+  color: #8B7355;
+  margin-top: 4px;
+}
+
+/* 省份节点 */
+.region-node {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.15);
+}
+
+.region-node.lit {
+  box-shadow: 0 4px 12px rgba(232, 180, 184, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.region-node.hovered {
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(139, 115, 85, 0.3);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(232, 180, 184, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(232, 180, 184, 0.6);
+  }
+}
+
+.region-name {
+  font-size: 9px;
+  font-weight: 600;
+  color: #5A4A3A;
+  text-align: center;
+  line-height: 1.1;
+  max-width: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.region-star {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 12px;
+  color: #D4AF37;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
+
+/* 连接线装饰 */
+.connection-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #E8C9A0, transparent);
+  height: 1px;
+  opacity: 0.3;
+}
+
+.line-1 {
+  width: 30%;
+  top: 30%;
+  left: 10%;
+  transform: rotate(-15deg);
+}
+
+.line-2 {
+  width: 25%;
+  top: 60%;
+  right: 15%;
+  transform: rotate(10deg);
+}
+
+.line-3 {
+  width: 20%;
+  bottom: 20%;
+  left: 30%;
+  transform: rotate(-5deg);
+}
+
+/* 底部装饰 */
+.map-divider {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #C9B99A;
+  letter-spacing: 2px;
+}
+
+/* ========== 景点推荐弹窗样式 ========== */
+.attractions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.attractions-panel {
+  width: 100%;
+  max-height: 70vh;
+  background: #FFFBF7;
+  border-radius: 24px 24px 0 0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.attractions-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.attractions-title-row {
+  flex: 1;
+}
+
+.attractions-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5A4A3A;
+}
+
+.attractions-subtitle {
+  font-size: 12px;
+  color: #A7C4BC;
+  margin-top: 4px;
+}
+
+.attractions-close {
+  width: 32px;
+  height: 32px;
+  background: rgba(139, 115, 85, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #8B7355;
+}
+
+.attractions-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E8C9A0, transparent);
+  margin: 12px 0;
+}
+
+.attractions-section-title {
+  font-size: 14px;
+  color: #8B7355;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.attractions-list {
+  padding-bottom: 16px;
+}
+
+.attraction-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(232, 180, 184, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(232, 180, 184, 0.3);
+}
+
+.attraction-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.attraction-content {
+  flex: 1;
+}
+
+.attraction-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5A4A3A;
+  margin-bottom: 4px;
+}
+
+.attraction-desc {
+  font-size: 13px;
+  color: #8B7355;
+  line-height: 1.4;
+}
+
+.attractions-empty {
+  text-align: center;
+  color: #C9B99A;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.attractions-footer {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.attractions-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.attractions-btn.btn-checkin {
+  background: linear-gradient(135deg, #E8B4B8 0%, #D4A0A5 100%);
+  color: #FFFFFF;
+}
+
+.attractions-btn.btn-cancel {
+  background: rgba(139, 115, 85, 0.1);
+  color: #8B7355;
+}
+
+/* H5 适配 */
+@media (min-width: 768px) {
+  .china-map-container {
+    min-height: 500px;
+  }
+  
+  .map-area {
+    height: 400px;
+  }
+  
+  .region-node {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .region-name {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,158 @@
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FDF8F3 0%, #F5EDE6 100%);
+  padding-bottom: 100px;
+}
+
+.journal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  background: linear-gradient(135deg, #FDF8F3 0%, #F5EDE6 100%);
+}
+
+.header-decoration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-decoration.left {
+  justify-content: flex-start;
+}
+
+.header-decoration.right {
+  justify-content: flex-end;
+}
+
+.decoration-text {
+  font-size: 20px;
+  color: #E8B4B8;
+}
+
+.header-content {
+  padding: 0 16px;
+}
+
+.stats-card {
+  background: white;
+  margin: 0 16px 16px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid #E5DDD5;
+  box-shadow: 0 4px 12px rgba(93, 78, 55, 0.06);
+}
+
+.stats-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.stats-main, .stats-secondary {
+  text-align: center;
+}
+
+.stats-divider {
+  width: 1px;
+  height: 40px;
+  background: #E5DDD5;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #F0E6DC;
+  border-radius: 4px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #A7C4BC 0%, #7FA89B 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.map-section {
+  padding: 0 8px;
+}
+
+.map-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: #FDF8F3;
+  border-radius: 16px;
+  margin: 8px;
+}
+
+.tips-section {
+  padding: 16px;
+  margin-top: 8px;
+}
+
+/* 对话框样式 */
+.dialog-content {
+  padding: 24px;
+  text-align: center;
+}
+
+.dialog-icon {
+  margin-bottom: 16px;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* 成功提示 */
+.success-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #E8B4B8 0%, #C89CA3 100%);
+  padding: 16px 32px;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(232, 180, 184, 0.4);
+  z-index: 1000;
+  animation: toastPop 0.3s ease;
+}
+
+@keyframes toastPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 景点推荐 */
+.attraction-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #E5DDD5;
+}
+
+.attraction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.attraction-item {
+  background: #FDF8F3;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid #E5DDD5;
+}

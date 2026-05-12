@@ -1,0 +1,173 @@
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FDF8F3 0%, #F5EDE6 100%);
+  padding-bottom: 100px;
+}
+
+.journal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+
+.header-decoration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-decoration.left {
+  justify-content: flex-start;
+}
+
+.header-decoration.right {
+  justify-content: flex-end;
+}
+
+.decoration-text {
+  font-size: 20px;
+  color: #E8B4B8;
+}
+
+.header-content {
+  padding: 0 16px;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.overview-section {
+  padding: 0 16px;
+}
+
+.overview-card {
+  background: linear-gradient(135deg, white 0%, #FDF8F3 100%);
+  border: 2px solid #E5DDD5;
+  border-radius: 16px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.overview-item {
+  text-align: center;
+}
+
+.visited-section {
+  padding: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.visited-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.visited-tag {
+  background: linear-gradient(135deg, #A7C4BC 0%, #8FB5AB 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.region-stats-section {
+  padding: 16px;
+}
+
+.region-card {
+  background: white;
+  border: 1px solid #E5DDD5;
+  border-radius: 12px;
+}
+
+.region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.region-progress {
+  height: 6px;
+  background: #F0E6DC;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.region-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #A7C4BC 0%, #7FA89B 100%);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.region-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.region-badge {
+  background: #FDF8F3;
+  border-color: #E5DDD5;
+  color: #5D4E37;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.achievements-section {
+  padding: 16px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.achievement-item {
+  background: white;
+  border: 2px solid #E5DDD5;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievement-item.unlocked {
+  background: linear-gradient(135deg, #FDF8F3 0%, #F5EDE6 100%);
+  border-color: #E8B4B8;
+}
+
+.achievement-item.locked {
+  opacity: 0.5;
+}
+
+.achievement-icon {
+  font-size: 32px;
+}
