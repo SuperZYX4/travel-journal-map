@@ -2,7 +2,10 @@
 
 一个利用Coze平台通过AI codings实现的基于Taro框架构建的跨平台旅游手账应用，支持微信小程序、抖音小程序、H5等多端部署，集成了地图功能、行程记录和旅游分享。
 
-<video src="./小程序演示视频.mp4" controls width="100%"></video>
+
+
+https://github.com/user-attachments/assets/983abb26-f65f-4f78-9290-ce3cddfd7e6c
+
 
 ## 项目特点
 
